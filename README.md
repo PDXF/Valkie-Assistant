@@ -1,121 +1,102 @@
+
+
 ```markdown
 # Valkie Assistant
 
-Valkie is a voice-controlled assistant built in Python that allows you to interact with your system and access a variety of useful features through voice commands. This assistant can tell jokes, perform calculations, open websites, play sounds, and much more.
+This repository contains the Python script `valkie_assistant.py`, which can be executed using the command `valkie` in the terminal.
 
-## Features
+## Prerequisites
 
-- Tells jokes
-- Tells the time and date
-- Performs calculations
-- Plays sound and music
-- Opens websites and browsers
-- Checks system memory and battery usage
-- And more...
+1. **Python 3.x** installed on your system.
+2. **pip** (Python package manager) for installing dependencies.
 
-## Requirements
+## Installation
 
-- Python 3.6+
-- Required Python packages:
-  - `speech_recognition`
-  - `pyttsx3`
-  - `pyjokes`
-  - `datetime`
-  - `webbrowser`
-  - `random`
-  - `rich`
-  - `sounddevice`
-  - `numpy`
+### Step 1: Clone the Repository
 
-You can install the required dependencies by running:
+Clone the repository to your local machine:
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/PDXF/valkie.git
 ```
 
-## Setup Instructions
-
-### 1. Clone the Repository
-
-Clone this repository to your local machine using the following command:
-
-```bash
-git clone https://github.com/PDXF/valkie-assistant.git
-```
-
-### 2. Navigate to the Project Directory
-
-Change into the directory of the cloned repository:
+### Step 2: Navigate into the Project Directory
 
 ```bash
 cd valkie-assistant
 ```
 
-### 3. Install Dependencies
+### Step 3: Install Dependencies
 
-Install the required Python packages:
+Install the required Python dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run Valkie
+### Step 4: Make the Python Script Executable
 
-You can run the Valkie Assistant by typing the following command:
+To be able to run the script with the `valkie` command directly, follow these steps:
+
+#### 4.1 Create a New File Named `valkie` in `/usr/local/bin`
+
+This will create a system-wide command that points to your Python script. You’ll need `sudo` permissions to create this file:
 
 ```bash
-python valkie_assistant.py
+sudo nano /usr/local/bin/valkie
 ```
 
-Once Valkie is running, you can issue the following commands:
+#### 4.2 Add the Following Code to the `valkie` File
 
-## Available Commands
+```bash
+#!/bin/bash
+python3 /path/to/your/valkie/valkie_assistant.py "$@"
+```
 
-### Jokes & Fun
-- **"tell a joke"**: Tells a random joke.
-- **"tell a time joke"**: Tells a time-based joke.
-- **"tell me a secret"**: Tells a random secret.
-- **"fun twist"**: Tells a fun twist.
+- Replace `/path/to/your/valkie/` with the full path to the `valkie` folder where `valkie_assistant.py` is located.
 
-### Time & Date
-- **"what time is it"** or **"tell me the time"**: Tells the current time.
-- **"what's the date"** or **"tell me the date"**: Tells the current date.
+#### 4.3 Make the File Executable
 
-### Sound & Music
-- **"play sound"**: Plays a 440Hz sound for 3 seconds.
-- **"play song"**: Simulates playing a song.
+```bash
+sudo chmod +x /usr/local/bin/valkie
+```
 
-### System Information
-- **"check memory"**: Displays system memory usage.
-- **"check battery"**: Displays battery status.
+### Step 5: Verify the Installation
 
-### Internet & Browsing
-- **"open website"**: Opens a website of your choice (e.g., "google.com").
-- **"search google"**: Searches Google for a query.
-- **"open firefox"**: Opens Firefox.
+Now, you can run the `valkie` command directly from your terminal:
 
-### System Operations
-- **"open text editor"**: Opens a text editor (nano).
-- **"shut down"**: Shuts down the system.
+```bash
+valkie
+```
 
-### Commands for Control
-- **"mute listening"**: Disables listening.
-- **"unmute listening"**: Enables listening.
+This will execute `valkie_assistant.py` without needing to specify `python3` or the script file name.
 
 ---
 
-## License
+## Usage
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Once the installation is complete, you can run the `valkie` command from anywhere in your terminal.
+
+```bash
+valkie
+```
+
+This will trigger the Python script's functionality.
+
+## Troubleshooting
+
+- If you encounter an error saying `valkie: command not found`, make sure that `/usr/local/bin` is in your `PATH`.
+- Ensure the `valkie` script is marked as executable: `sudo chmod +x /usr/local/bin/valkie`.
 
 ---
 
-Enjoy using Valkie Assistant! 🦾
+Feel free to modify the Python script as needed, and contribute to this repository!
 ```
 
-### Key Points:
-- You `cd` into the cloned repository `valkie` folder after cloning.
-- You run the script using `python valkie_assistant.py`.
-- This includes a full list of commands like jokes, time, system info, and more.
+### Explanation:
 
-Let me know if you'd like any further adjustments!
+1. **`/usr/local/bin/valkie`**: This is where the custom command `valkie` will be placed. The script in this file will tell the system to execute your Python script when you type `valkie` in the terminal.
+2. **`"$@"`**: This passes any arguments you provide after `valkie` directly to the Python script, allowing for flexible usage if you want to add parameters.
+3. **`sudo chmod +x /usr/local/bin/valkie`**: This ensures the file is executable.
+
+With these steps, you should be able to execute the Python script with the `valkie` command from anywhere on your system!
