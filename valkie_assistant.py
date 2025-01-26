@@ -959,10 +959,10 @@ valkie_assistant()
 #
 # ASCII Cat for a bit of fun and love from the community!
 
-# |\---/|
+#  |\---/|
 #  | ,_, |
 #   \_`_/-..----.
-#  ___/ `   ' ,""+ \  sk
+#  ___/ `   ' ,""+ \  
 # (__...'   __\    |`.___.';
 #   (_,...'(_,.`__)/'.....+
 
