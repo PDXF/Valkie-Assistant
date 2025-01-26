@@ -40,7 +40,7 @@ pip install -r requirements.txt
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/valkie-assistant.git
+git clone https://github.com/PDXF/valkie-assistant.git
 ```
 
 ### 2. Navigate to the Project Directory
