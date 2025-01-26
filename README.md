@@ -48,7 +48,7 @@ git clone https://github.com/PDXF/valkie-assistant.git
 Change into the directory of the cloned repository:
 
 ```bash
-cd valkie
+cd valkie-assistant
 ```
 
 ### 3. Install Dependencies
